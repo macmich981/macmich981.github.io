@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var apiRoot = 'http://intense-scrubland-07999.herokuapp.com/v1/task/';
+  var apiRoot = 'https://intense-scrubland-07999.herokuapp.com/v1/task/';
   var datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   var tasksContainer = $('[data-tasks-container]');
 
@@ -66,7 +66,7 @@ $(document).ready(function() {
   function handleTaskDeleteRequest() {
     var parentEl = $(this).parent().parent();
     var taskId = parentEl.attr('data-task-id');
-    var requestUrl = apiRoot + taskId;
+    var requestUrl = apiRoot + 'deleteTask';
 
     $.ajax({
       url: requestUrl + '/?' + $.param({
